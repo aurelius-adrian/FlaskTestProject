@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<form action="/input" method="POST">
+    <div class="input">
+        <div class="input-screen">
+            <div class="app-title">
+                <h1>Input</h1>
+            </div>
+            <div class="input-form">
+                <div class="control-group">
+                    <input type="text" class="input-field" value="" placeholder="query" name="query">
+                    <label class="input-field-icon fui-user" for="login-name"></label></div>
+                <input type="submit" value="Run" class="btn btn-primary btn-large btn-block">
+            </div>
+            <div class="app-title">
+{#                {% for data in data %}#}
+                    <p>{{ data }}</p>
+{#                {% endfor %}#}
+            </div>
+        </div>
+    </div>
+</form>
+</html>
