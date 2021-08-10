@@ -20,6 +20,7 @@ def refresh():
 
 @app.route('/login', methods=['POST'])
 def do_admin_login():
+    # TODO consider database implementation for credentials
     if request.form['password'] == 'admin' and request.form['username'] == 'admin':
         session['logged_in'] = True
         flash('correct pwd')
@@ -32,12 +33,12 @@ def do_admin_login():
 
 @app.route('/input', methods=['POST'])
 def do_input():
-    data = request.form['query']
+    query = request.form['query']
+    # TODO implement initialization of 'data' as return of program with 'query' input
+    data = query
+    # ----------------
     return render_template('input.html', data=data)
 
 
 if __name__ == "__main__":
-    # app.config['SESSION_TYPE'] = 'filesystem'
-    # sess = Session()
-    # sess.init_app(app)
     app.run(debug=True, host='0.0.0.0', port=4000)
